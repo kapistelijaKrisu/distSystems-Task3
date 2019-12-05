@@ -16,3 +16,9 @@ Not done due to the fact that graph of states already looks quite messy with 9 s
 When in time edit mode time does not tick. Holding lower left increases time by 1sec every 0.3sec. Not pressing bottom right or bottom left (not all buttons work as refresh to countdown) for 5sec or holding bottom right again for 2sec exits the time edit mode.
 ### No concurrency ###
 Due to the fact we did no go through how to write SVM or the fact that starting point chart does not work. we decided to avoid concurrency to avoid other problems after tryharding for a while. 
+
+### State chart ###
+
+
+
+![Chart of states and their transitions](/chart.png)
