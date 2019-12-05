@@ -1,5 +1,7 @@
 # Report #
 
+Group: Kristian Valto, Marko Koskinen, Tommi Viiala, Oskari Laaja
+
 ### 1 ###
 Time ticks in time display and chrono mode, not in que to edit mode.
 ### 2 ###
