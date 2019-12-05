@@ -1,0 +1,155 @@
+INITIALIZER:
+    from Tkinter import *
+    from DWatchGUI import DWatchGUI
+    
+    root = Tk()
+    root.title("A Title")
+    g = DWatchGUI(root, eventhandler)
+
+    a = 1
+    
+    eventhandler.start()
+    root.mainloop()
+
+    
+
+    exit()
+
+STATECHART:
+    A [DS]
+    B
+    C
+    D
+    E
+    F 
+    G 
+    H
+    I
+
+TRANSITION:
+    S: A
+    N: A
+    T: 1
+    O: g.increaseTimeByOne()
+       print "A->A"
+
+TRANSITION:
+    S: A
+    N: B 
+    E: lightOn
+    O: g.setIndiglo()
+    print "A->B"
+
+TRANSITION:
+    S: B
+    N: C 
+    E: lightOff
+    O: print "B->C"
+
+TRANSITION:
+    S: B
+    N: B
+    T: 1
+    O: g.increaseTimeByOne()
+       print "B->B"
+
+TRANSITION:
+    S: C
+    N: D
+    T: 1
+    O: g.increaseTimeByOne()
+    print "C->D"
+
+TRANSITION:
+    S: D
+    N: A 
+    T: 1
+    O: g.increaseTimeByOne()
+       g.unsetIndiglo()
+       print "D->A"
+
+TRANSITION:
+    S: A
+    N: E 
+    E: changeMode
+    O: g.resetChrono()
+       g.refreshChronoDisplay()
+       print "A->E"
+
+TRANSITION:
+    S: E
+    N: A
+    E: changeMode
+    O: print "E->A"
+
+TRANSITION:
+    S: E
+    N: E 
+    T: 1
+    O: g.increaseTimeByOne()
+       g.increaseChronoByOne()
+       g.refreshChronoDisplay()
+       print "E->E"
+
+TRANSITION:
+    S: A 
+    N: F 
+    E: editTime
+    O: print "A->F que"
+
+TRANSITION:
+    S: F
+    N: G
+    T: 1.5
+    O: print "F->G edit view"
+
+TRANSITION:
+    S: F
+    N: A
+    E: released
+    O: print "F->A early release"
+
+TRANSITION:
+    S: G
+    N: A
+    T: 5
+    O: print "G->A back to start"
+
+TRANSITION:
+    S: G
+    N: H
+    E: editTime
+    O: print "G->H que to exit"
+
+TRANSITION:
+    S: H
+    N: A
+    T: 2
+    O: print "H->A back to start"
+
+TRANSITION:
+    S: H
+    N: G
+    E: released
+    O: print "H->G early exit"
+
+TRANSITION:
+    S: G
+    N: I
+    E: increase
+    O: print "G->I increase state"
+
+TRANSITION:
+    S: I
+    N: I
+    T: 0.3
+    O: g.increaseTimeByOne()
+    print "I->I increase time"
+
+TRANSITION:
+    S: I
+    N: G
+    E: stopInc
+    O: print "I->G"
+
+
